@@ -14,6 +14,17 @@
             $row = $configs->prepare($sql);
             $row->execute();
             $hasil = $row->fetch();
+
+            $sql_nis = "SELECT max(nis) as NisnInput FROM tb_pendaftaran";
+            $row_nis = $configs->prepare($sql_nis);
+            $row_nis->execute();
+            $data = $row_nis->fetch();
+            $NisnInput = $data["NisnInput"];
+
+            $urutan = (int) substr($NisnInput, -3,8);
+            $urutan++;
+            $NisnInput = "00647726";
+            $kodenisn = $NisnInput . sprintf("%03s", $urutan);
         ?>
     </head>
 
@@ -73,7 +84,8 @@
                                             <td colspan="2">Nomer Induk Siswa</td>
                                             <td colspan="6">
                                                 <input type="text" maxlength="10" class="form-control col-md-3 col-lg-3"
-                                                    required aria-required="true" name="nis" id="" value=""
+                                                    required aria-required="true" name="nis" aria-readonly="true"
+                                                    readonly value="<?=$kodenisn;?>"
                                                     placeholder="otomatis pengisian nomer induk siswa">
                                             </td>
                                         </tr>

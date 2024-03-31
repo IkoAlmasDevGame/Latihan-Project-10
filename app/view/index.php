@@ -104,19 +104,19 @@
                 </nav>
 
                 <section class="min-vh-100">
-                    <div class="container-fluid py-5 p-5 bg-secondary min-vh-75">
+                    <div class="container-fluid py-5 p-5 bg-secondary">
                         <h4 class="fs-2 fst-normal fw-semibold text-end text-white">
                             <?php echo ucwords(ucfirst($hasil[1])); ?>
                         </h4>
-                        <div class="container-fluid py-5 bg-light min-vh-50">
+                        <div class="container-fluid py-5 bg-light">
                             <div class="card border border-transparent border-0">
                                 <div class="card-footer border border-transparent border-0">
-                                    <div class="d-flex justify-content-start align-items-center flex-wrap">
+                                    <div class="d-flex justify-content-start align-items-start flex-wrap">
                                         <h4 for="" class="text-start text-md-start row 
                                             form-group align-items-center fs-3 fw-lighter fst-normal">
                                             Nama Sekolah
                                         </h4>
-                                        <div class="col-md-10 col-lg-10 ms-auto ps-auto fs-3">
+                                        <div class="col-md-9 col-lg-9 ms-auto ps-auto fs-3">
                                             <p class="text-end"><?=$hasil[1]?></p>
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@
                                             form-group align-items-center fs-3 fw-lighter fst-normal">
                                             Jenis Sekolah
                                         </h4>
-                                        <div class="col-md-10 col-lg-10 ms-auto ps-auto fs-3">
+                                        <div class="col-md-9 col-lg-9 ms-auto ps-auto fs-3">
                                             <p class="text-end"><?=$hasil[2]?></p>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                             form-group align-items-center fs-3 fw-lighter fst-normal">
                                             Nama Kepala Sekolah
                                         </h4>
-                                        <div class="col-md-10 col-lg-10 ms-auto ps-auto fs-3">
+                                        <div class="col-md-9 col-lg-9 ms-auto ps-auto fs-3">
                                             <p class="text-end"><?=$hasil[3]?></p>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                             form-group align-items-center fs-3 fw-lighter fst-normal">
                                             Tanggal Resmi Sekolah
                                         </h4>
-                                        <div class="col-md-10 col-lg-10 ms-auto ps-auto fs-3">
+                                        <div class="col-md-9 col-lg-9 ms-auto ps-auto fs-3">
                                             <p class="text-end"><?=$hasil[4]?></p>
                                         </div>
                                     </div>
@@ -153,12 +153,12 @@
                     </div>
                 </section>
 
-                <section class="min-vh-100" id="prestasi">
-                    <div class="container-fluid rounded-1 py-5 p-5 bg-secondary min-vh-75">
+                <section id="prestasi" class="min-vh-100">
+                    <div class="container-fluid py-4 p-4 bg-secondary">
                         <h4 class="fs-2 fst-normal fw-semibold text-end text-white">
                             <?php echo ucwords(ucfirst($hasil[1]))." - Prestasi"; ?>
                         </h4>
-                        <div class="container-fluid py-5 bg-light">
+                        <div class="container-fluid py-4 bg-light">
                             <ul class="nav-item fs-3 fst-normal fw-lighter">
                                 <ol type="1">
                                     <li class="text-decoration-none fst-normal fw-lighter">Isi Sendiri</li>
@@ -178,7 +178,7 @@
                 </section>
 
                 <section class="min-vh-100" id="gallery">
-                    <div class="container-fluid rounded-1 py-5 p-5 bg-secondary">
+                    <div class="container-fluid py-4 p-4 bg-secondary">
                         <h4 class="fs-2 fst-normal fw-semibold text-end text-white">
                             <?php echo ucwords(ucfirst($hasil[1]))." - Gallery"; ?>
                         </h4>
