@@ -14,6 +14,9 @@
             require_once("../../../controller/view.php");
             require_once("../../../model/model.php");
 
+            $viewAuth = new view\ViewAuth($configs);
+            $viewAccount = new view\ViewPendaftaran($configs);
+
             if(!isset($_GET["aksi"])){
                 require_once("../dashboard/index.php");
             }else{

@@ -18,4 +18,14 @@ class ViewAuth{
     }
 }
 
+use model\pendaftaran;
+class ViewPendaftaran {
+    protected $konfig;
+    public function __construct($db)
+    {
+        $this->konfig = new Auth($db);
+    }
+
+}
+
 ?>
