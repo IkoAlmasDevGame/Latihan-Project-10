@@ -9,11 +9,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <?php 
             require_once("../../../database/koneksi.php");
+            require_once("../../../model/model.php");
+            require_once("../../../controller/view.php");
+            /*Table Sistem*/ 
             $table = "tb_sistem";
             $sql = "SELECT * FROM $table ORDER BY id asc";
             $row = $configs->prepare($sql);
             $row->execute();
             $hasil = $row->fetch();
+
+            /* Login */ 
+            $mAuth = new view\ViewAuth($configs);
+            if(!isset($_GET["act"])){
+                require_once("../auth/index.php");
+            }else{
+                switch ($_GET["act"]) {
+                    case 'signin':
+                        $mAuth->Login();
+                        break;
+                    
+                    default:
+                        require_once("../auth/index.php");
+                        break;
+                }
+            }
         ?>
     </head>
 
@@ -41,6 +60,57 @@
                         <span id="time" class="text-end fs-5 fw-lighter fst-normal"></span>
                     </header>
                 </nav>
+
+                <section class="d-flex justify-content-center align-items-center flex-wrap" style="min-height: 70vh;">
+                    <div class="p-5 py-5 bg-light col-md-9 col-lg-9">
+                        <h4 class="fs-1 text-dark display-4 fst-normal fw-semibold text-center">Login Admin</h4>
+                        <div class="py-5 p-5 bg-light col-md-9 col-lg-9 mx-auto">
+                            <form action="?act=signin" method="post">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="input-group-addon col-md-8 col-lg-8">
+                                        <label for="">Email atau Username : </label>
+                                        <div class="input-group">
+                                            <input type="text" name="userMail" class="form-control"
+                                                placeholder="Masukkan Email atau Username anda ..." aria-required="true"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4"></div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="input-group-addon col-md-8 col-lg-8">
+                                        <label for="">Password atau Kata sandi : </label>
+                                        <div class="input-group">
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Masukkan Password atau Kata sandi anda ..."
+                                                aria-required="true" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4"></div>
+                                <div class="mx-auto border border-top border-top my-3 col-sm-9 col-md-9"></div>
+                                <div class="modal-footer d-flex justify-content-center align-items-center flex-wrap">
+                                    <button type="submit" class="btn btn-primary mx-1">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                        Login Here
+                                    </button>
+                                    <button type="reset" class="btn btn-danger mx-1">
+                                        <i class="fas fa-eraser"></i>
+                                        Hapus semua
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <span>
+                            <div class="text-center">
+                                <a href="" class="text-decoration-none text-primary">
+                                    <i class="fa fa-copyright text-dark"></i>
+                                    <span>By IkoAlmasDevGame</span>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                </section>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
