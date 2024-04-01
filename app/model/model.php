@@ -65,4 +65,16 @@ class pendaftaran {
     }
 }
 
+class Account {
+    protected $db;
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    public function AuthAccount(){
+        
+    }
+}
+
 ?>

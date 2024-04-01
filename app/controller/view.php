@@ -23,7 +23,17 @@ class ViewPendaftaran {
     protected $konfig;
     public function __construct($db)
     {
-        $this->konfig = new Auth($db);
+        $this->konfig = new pendaftaran($db);
+    }
+
+}
+
+use model\Account;
+class ViewAccount {
+    protected $konfig;
+    public function __construct($db)
+    {
+        $this->konfig = new Account($db);
     }
 
 }

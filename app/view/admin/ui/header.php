@@ -16,6 +16,7 @@
 
             $viewAuth = new view\ViewAuth($configs);
             $viewAccount = new view\ViewPendaftaran($configs);
+            $viewAccount = new view\ViewAccount($configs);
 
             if(!isset($_GET["aksi"])){
                 require_once("../dashboard/index.php");
